@@ -8,5 +8,6 @@ multipleOf :: (Integer, Integer) -> Bool
 multipleOf (n, y) = n `mod` y == 0
 multipleOf3or5 (n) = multipleOf(n, 3) || multipleOf(n, 5)
 
+
 main = do
   putStrLn(show(sum([i | i <- [1..999], multipleOf3or5(i)])))
