@@ -7,7 +7,6 @@
 multipleOf :: (Integer, Integer) -> Bool
 multipleOf (n, y) = n `mod` y == 0
 multipleOf3or5 (n) = multipleOf(n, 3) || multipleOf(n, 5)
-sumOfMultiples (n) = sum [i | i <- filter multipleOf3or5 [1..n]]
 
 main = do
-  putStrLn(show(sumOfMultiples(1000 - 1)))
+  putStrLn(show(sum([i | i <- [1..999], multipleOf3or5(i)])))
